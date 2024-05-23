@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet"></head>
+
+    <title> homepage </title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="pixelify-sans-AB"> TEAM-mate  </header>
+        <div class="button">
+            <h1>오늘의 고양이</h1>
+
+            <button id="randomCatButton">랜덤 고양이 만나기</button>
+            <div id="imgContainer"></div>
+
+            <!-- Axios -->
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+            <script src="home.js"></script>
+        </div> 
+        <div>
+            <a href="signup.html"> <button>회원가입</button> </a> 
+            <a href="signin.html"> <button>로그인 </button></a> 
+        </div>
+    </div>
+        <script>
+        function getUser(){
+            const config = {
+                method: "get"
+            };
+            fetch("https://api.thecatapi.com/v1/images/search?size=full",config) //전달한 url과 옵션 객체를 통해 HTTP통신수행
+            .then(response => response.json()) //요청작업 완료 이후 다음 수행할 작업을 입력함.
+            .then(data=> console.log(data)) //data console창에 출력
+            .then(data=> {
+                const id = document.createElement("div");
+                const url = document.createElement("div");
+                const width = document.createElement("div");
+                const height = document.createElement("div");
+            
+                id.textContent = data.id;
+                url.textContent = data.url;
+                width.textContent = data.width;
+                height.textContent = data.height;
+
+                const catinfo = document.getElementById("catinfo")
+                catinfo.appendChild(id);
+                catinfo.appendChild(url);
+                catinfo.appendChild(width);
+                catinfo.appendChild(height);
+
+            })
+            .catch(error => console.log(error));
+        }
+
+    </script>
+</body>
+</html>
