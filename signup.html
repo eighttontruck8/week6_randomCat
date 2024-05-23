@@ -21,38 +21,38 @@
                 <div class="user-info">
                     <div class="id">
                         <div>* 아이디</div> 
-                        <input type="text" placeholder="이메일 형식 " > 
+                        <input type="text" id="id" placeholder="이메일 형식 " > 
                     </div>
                     <div class="pw"> 
                         <div>* 비밀번호</div> 
-                        <input type="password" placeholder="비밀번호 입력 ">
+                        <input type="password" id="pw" placeholder="비밀번호 입력 ">
 
                     </div>
                     <div class="pw-check"> 
                         <div>* 비밀번호 확인</div> 
-                        <input type="password" placeholder="비밀번호 확인 ">
+                        <input type="password" id ="pw-check" placeholder="비밀번호 확인 ">
                     </div>  
                     <div class="student-number"> 
                         <div>* 학번</div> 
-                        <input type="text" placeholder="학번 (10자리) ">
+                        <input type="text" id="student-number" placeholder="학번 (10자리) ">
                     </div>
 
                     <div class="major"> 
 
                         <div>* 전공</div> 
-                        <input type="text" placeholder="전공 ">
+                        <input type="text" id="major" placeholder="전공 ">
                     </div>
                     <div class="phone-number">
                         <div>* 전화번호</div> 
-                        <input type="text" placeholder="ex. 010-1234-5678 " >
+                        <input type="text" id="phone-number" placeholder="ex. 010-1234-5678 " >
                     </div>
                 </div>
                 
                     <div class="signup" display = "flex">              
-                        <button> signup </button>
+                        <button id = "signupButton"> signup </button>
                     </div>
                     <div class="cancel">
-                        <button > cancel </button> 
+                        <button id = "cancelButton"> cancel </button> 
                     </div>
             </div>
 
@@ -62,12 +62,8 @@
                 <a href="signin.html"> <button>로그인 화면으로 이동 </button></a> 
             </div> 
         
-          
+        </div>
+        <script src="signup.js"></script>
 
-   
-        
-        
-    <script src="signin.js"></script>
-</div>
-</body>
+    </body>
 </html>
